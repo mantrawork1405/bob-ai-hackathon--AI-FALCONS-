@@ -102,7 +102,7 @@ streamlit run app.py
 |---|---|
 | 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
 | 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
-| 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
+| 🖼️ Screenshots | https://drive.google.com/drive/folders/1DLjfMHdzfaJngH-0tiZcnqpu457Wj06L?usp=sharing |
 | 📊 Presentation | https://drive.google.com/drive/folders/1bl4D2mQmpfKUl3Fiy4ykWl1iGlyDFemS?usp=sharing |
 
 ---
