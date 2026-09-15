@@ -1,55 +1,58 @@
-# 🚀 [Your Project Title Here]
+# 🚀 [Container Congestion Predictor & Port Operations Optimiser]
 
 > ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
 
----
+--
 
 ## 👥 Team
 
 | Field | Value |
 |---|---|
-| **Team Name** | [Your Team Name] |
-| **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Name** | [AI FALCONS] |
+| **Track** | [IBM Bobathon 2026] |
+| **Team Lead** | [MANTRA PATEL] — [mantrawork1405@gmail.com] |
+| **Members** | [HET PATEL], [NIRBHAY PATEL], [DHAIRYA PATEL] |
 
 ---
 
 ## 🎯 Problem Statement
 
-> In 2–3 sentences: What problem does your project solve? Who experiences this problem?
-
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
+> Port congestion causes vessel delays,
+> inefficient berth utilization,
+> crane scheduling problems, and
+> increased operational costs.
 
 ---
 
 ## 💡 Solution
 
-> In 2–3 sentences: What did you build? How does it solve the problem above?
-
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
+Our AI-Powered system predicts
+congestion hotspots and helps port
+operators optimize vessel routing,
+berth allocation, crane allocation,
+and 72-hour port operations planning.
 
 ---
 
 ## ✨ Key Features
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
+- **Feature 1:** [Vessel congestion prediction]
+- **Feature 2:** [Berth allocation optimization]
+- **Feature 3:** [Crane allocation optimization]
+- **Feature 4:** [Alternate route recommendation]
+- **Feature 5:** [Congestion dashboard]
+- **Feature 6:** [72-hour port operations plan]
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|---|---|
-| **Languages** | [e.g., Python, TypeScript] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
+- Python
+- Machine learning
+- pandas
+- NumPy
+- Streamlit
+- Optimization Algorithms
 
 ---
 
@@ -77,18 +80,18 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
+git clone https://github.com/mantrawork1405/bob-ai-hackathon--AI-FALCONS-.git
+cd bob-ai-hackathon--AI-FALCONS-
 
 # 2. Install dependencies
-[your install command here]
+pip install -r requirement.txt
 
 # 3. Configure environment
 cp .env.example .env
 # Edit .env with your values
 
 # 4. Run the project
-[your run command here]
+streamlit run app.py
 ```
 
 ---
@@ -100,7 +103,7 @@ cp .env.example .env
 | 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
 | 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
-| 📊 Presentation | [See presentation/slides.pdf](presentation/) |
+| 📊 Presentation | 
 
 ---
 
