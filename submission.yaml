@@ -66,4 +66,4 @@ artifacts:
   demo_video: "demo/demo-video-link.txt"   # URL to hosted video (YouTube, Loom, Box)
   live_demo: "demo/live-demo-url.txt"      # URL to deployed demo (optional)
   screenshots: "demo/screenshots/"
-  presentation: "presentation/"
+  presentation: "https://drive.google.com/drive/folders/1bl4D2mQmpfKUl3Fiy4ykWl1iGlyDFemS?usp=sharing"
