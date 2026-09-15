@@ -61,7 +61,7 @@ submission: 15/09/2026
 # =============================================================================
 artifacts:
   source_code: "https://drive.google.com/drive/folders/1enUJK4lD55mFGVYXTclIj3YZTvzvgklr?usp=sharing"
-  setup_guide: "docs/setup-guide.md"
+  setup_guide: "https://drive.google.com/drive/folders/1aecGotNdyq5s8WwxpiK93KkVOjxs2x2X?usp=sharing"
   architecture_doc: "https://drive.google.com/drive/folders/1DWfPSPZFe2negmRT9UzJSvDAMtIWsL6p?usp=sharing"
   demo_video: "https://drive.google.com/drive/folders/19lHYghabk_lk42D98y_LlSjrJdRytVOV?usp=sharing"   # URL to hosted video (YouTube, Loom, Box)
   live_demo: "https://drive.google.com/drive/folders/1-YNd3cHcaJR4aOLSUaAS6kMgICCY7Mlu?usp=sharing"      # URL to deployed demo (optional)
