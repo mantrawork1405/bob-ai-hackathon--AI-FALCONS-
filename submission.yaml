@@ -26,26 +26,69 @@ submission: 15/09/2026
   title: "PORT OPS CONGESTION PREDICTOR & OPTIMISER"                            # REQUIRED — Project display name, e.g., "SmartOps Dashboard"
 
   problem_statement: >                 # REQUIRED — 1-3 sentences. What problem? Who has it?
-    Replace this text with a concise description of the real-world problem
-    your project addresses and who experiences it.
+    Al-Based Port Operations & Container Congestion
+Management
+Problem Statement
+Modern container ports face several operational problems due to unpredictable vessel arrivals, yard
+congestion, inefficient truck-gate flow, and manual resource allocation. These issues increase waiting
+time, turnaround time, and operational costs.
+Major Problems
+Unpredictable Vessel ETA: Weather conditions and previous delays can change the actual
+arrival time of vessels, causing sudden benh bottlenecks.
+Yard Congestion: Uneven distribution and high container volumes can Overload particular yard
+blocks and reduce handling efficiency.
+Truck-Gate Congestion: Uncoordinated truck appointments can create heavy traffic and long
+waiting times during peak hours.
+Manual Berth Scheduling: Manual allocation Of berths and cranes may lead to inefficient
+resource utilization and vessel waiting.
+High Turnaround Time: poor coordination between vessels, yard operations, trucks, and
+available resources increases the total time required for port operations
 
   solution_summary: >                  # REQUIRED — 1-3 sentences. What did you build?
-    Replace this text with a clear description of your solution
-    and how it addresses the problem above.
+    Al-Powered Smart Port Management System
+Proposed Solution
+We propose an Al-based smart port management system that uses real-time data, machine learning,
+and predictive analytics to reduce vessel delays, container congestion, and inefficient resource
+utilization.
+Al-Based Solutions
+1. Al-Based Vessel ETA Prediction: Al analyzes historical vessel data, weather conditions,
+traffic, and live vessel information to predict accurate arrival times and identify possible delays in
+advance.
+2. Predictive Yard Congestion Managernent: Machine learning predicts which yard areas may
+become congested based on container volume, yard capacity, and truck movement, and
+recommends better container placement.
+3. Al-Based Berth & Crane Scheduling: Al recommends suitable berths and cranes by
+considering vessel ETA, priority, workload, and resource availability, reducing vessel waiting and
+crane idle time.
+4. Smart Truck Gate Management: Al predicts peak truck-arrival periods and helps distribute
+truck appointments to reduce gate congestion and waiting time.
+5. Real-Time Decision Dashboard: A centralized dashboard displays vessel ETA yard
+congestion, berth availability, crane utilization, truck traffic, and Al-generated alerts.
+Working Flow
+Real-Time port Data AVML MOdel -+
+Port Operator
+Expected Benefits
+Reduced vessel waiting tirne
+Lower container-yard congestion
+Reduced truck waiting time
+Prediction * Optimization —+ Best Recommendation —i
+Better utilization of berths and cranes
+Lower operational cost
+Faster vessel turnaround and improved overall port efficiency
 
   key_features:                        # REQUIRED — List 3 to 5 specific features you implemented
-    - ""                               # e.g., "Real-time pipeline anomaly detection using watsonx.ai"
-    - ""
-    - ""
-    - ""                               # optional 4th
+    - "Automated Vessel berth scheduling using constraint-satisfaction optimization"                               # e.g., "Real-time pipeline anomaly detection using watsonx.ai"
+    - "predictive turnaround time forecasting powered by IBM watsonx.ai foundation models"
+    - "Real-time port congestion monitoringand anomaly alerting dashboard"
+    - "Automated document parsing for cargomanifests via LLM extraction"                               # optional 4th
     - ""                               # optional 5th
 
   tech_stack:
-    languages: []                      # REQUIRED — e.g., ["Python", "TypeScript"]
-    frameworks: []                     # e.g., ["FastAPI", "React"]
-    ibm_technologies: []               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
-    databases: []                      # e.g., ["PostgreSQL", "Redis"]
-    other: []                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
+    languages: [HTML]                      # REQUIRED — e.g., ["Python", "TypeScript"]
+    frameworks: [fastAPI]                     # e.g., ["FastAPI", "React"]
+    ibm_technologies: [IBM bob]               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
+    databases: [html]                      # e.g., ["PostgreSQL", "Redis"]
+    other: [GitHub Actions]                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
 
   what_we_are_most_proud_of: >         # Optional but recommended — guides judges to your best work
     Replace with what aspect of the submission you consider strongest
