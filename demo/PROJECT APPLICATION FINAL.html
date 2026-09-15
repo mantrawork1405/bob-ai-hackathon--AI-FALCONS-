@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Port Optimizer</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f4f8fc;color:#102b52}.app{display:flex;min-height:100vh}.sidebar{width:260px;background:linear-gradient(180deg,#071b38,#09284c);color:#fff;padding:22px 16px;position:fixed;inset:0 auto 0 0;z-index:5}.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:600;line-height:1.05;padding:0 8px 28px}.anchor{font-size:35px}.sidebar nav{display:flex;flex-direction:column;gap:7px}.nav,.logout{border:0;background:transparent;color:#d8e7f8;text-align:left;padding:14px 15px;border-radius:9px;font-size:15px;cursor:pointer;display:flex;gap:14px;align-items:center}.nav{font-weight:600}.nav:hover,.nav.active{background:#1477f9;color:white;box-shadow:0 7px 20px #00142e55}.logout{position:absolute;bottom:75px;width:calc(100% - 32px)}.side-footer{position:absolute;bottom:18px;left:23px;font-size:11px;color:#9db2cb}.main{margin-left:260px;width:calc(100% - 260px);min-width:0}.topbar{height:62px;background:#fff;border-bottom:1px solid #e1e9f2;display:flex;align-items:center;padding:0 28px;gap:18px;position:sticky;top:0;z-index:4}.menu{border:0;background:none;font-size:22px;color:#0b315d;cursor:pointer}.crumb{font-weight:700;color:#6b7f98}.user{margin-left:auto;font-size:13px;font-weight:600}.page{display:none;padding:32px;max-width:1450px;margin:auto}.page.active{display:block}.page-title h1{font-size:31px;margin:0 0 6px}.page-title p{margin:0 0 25px;color:#6b7f98}.hero{min-height:400px;border-radius:18px;overflow:hidden;background:linear-gradient(115deg,#0c3767 0%,#166db8 53%,#7ea4c1 100%);color:white;padding:55px 55px;display:grid;grid-template-columns:1.05fr .95fr;position:relative;box-shadow:0 15px 40px #12365d22}.hero h1{font-size:48px;line-height:1.05;margin:15px 0}.hero p{max-width:610px;line-height:1.7;color:#e8f2fc}.eyebrow{font-size:11px;letter-spacing:1.2px;color:#bde1ff}.hero-art{position:relative;min-height:280px;background:linear-gradient(#7ba8c8aa,#d2e0e655);border-radius:50% 50% 0 0;margin:10px 0 -55px 20px;overflow:hidden}.water{position:absolute;left:0;right:0;bottom:0;height:43%;background:#0a4e78aa}.ship{position:absolute;font-size:120px;right:17%;bottom:28px;filter:drop-shadow(0 15px 8px #001b3344)}.crane{position:absolute;font-size:80px;right:57%;top:35px;transform:rotate(-12deg)}.primary{border:0;background:#1477f9;color:#fff;border-radius:10px;padding:14px 27px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 7px 18px #0b5bc955}.primary:hover{transform:translateY(-1px)}.wide{width:100%}.section-head{display:flex;align-items:end;justify-content:space-between;margin:30px 0 15px}.section-head h2{margin:0}.section-head p{margin:5px 0 0;color:#7589a1}.status-dot{color:#179a60;font-weight:700;font-size:13px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.stat,.result{background:white;border:1px solid #e1e9f2;border-radius:12px;padding:22px;box-shadow:0 5px 18px #1a3b5c0a}.stat span,.result span{display:block;font-size:14px;font-weight:700;color:#405976}.stat strong{display:block;font-size:31px;margin:12px 0 5px}.stat small,.result small{color:#8193a8}.stat.blue{border-top:4px solid #2f80ed}.stat.green{border-top:4px solid #18b66a}.stat.orange{border-top:4px solid #f3a23a}.stat.purple{border-top:4px solid #8a6be8}.panel{background:#fff;border:1px solid #e0e9f2;border-radius:13px;padding:22px;box-shadow:0 5px 20px #1a3b5c0a}.panel h2{font-size:19px;margin:0 0 18px}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.form-section{border-bottom:1px solid #e5edf5;padding-bottom:0}.full{grid-column:1/-1}label{font-size:13px;font-weight:700;color:#536a83}input,select{display:block;width:100%;margin-top:8px;border:1px solid #d5e1ec;border-radius:8px;padding:12px;background:#fbfdff;color:#17395f;font-size:14px;outline:none}input:focus,select:focus{border-color:#1477f9;box-shadow:0 0 0 3px #1477f914}.two-col{display:grid;grid-template-columns:1.8fr 1fr;gap:18px;margin-top:18px}.stack{display:flex;flex-direction:column;gap:18px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:13px 10px;text-align:left;border-bottom:1px solid #edf2f7;white-space:nowrap}th{background:#f4f8fc;color:#415b77;font-size:12px}tbody tr:hover{background:#f8fbff}.badge{padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800}.waiting{background:#fff1ce;color:#b26b00}.berth{background:#dff8eb;color:#118352}.scheduled{background:#e4f0ff;color:#1767c4}.view{border:0;background:#1477f9;color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer}.status-list{display:grid;gap:12px}.status-list div{display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid #edf2f7;font-size:13px}.status-list em{font-style:normal;background:#fff0ca;color:#a56b00;padding:4px 8px;border-radius:15px}.status-list strong{color:#16945e}.analysis-grid{display:grid;grid-template-columns:1fr 2fr;gap:18px}.score{min-height:230px}.score>span{font-weight:700;color:#5b7089}.score strong{display:block;font-size:34px;margin:25px 0 18px}.meter{height:12px;background:#e8eef5;border-radius:20px;overflow:hidden}.meter i{display:block;height:100%;width:62%;background:#f0a22d;border-radius:20px}.check-list{list-style:none;padding:0;margin:0;display:grid;gap:14px}.check-list li:before{content:'✓';display:inline-grid;place-items:center;width:23px;height:23px;background:#dff8ea;color:#12945b;border-radius:50%;margin-right:10px;font-weight:900}.recommendation{margin-top:18px}.strategy{display:flex;gap:15px;padding:15px 0;border-top:1px solid #edf2f7}.strategy span{width:34px;height:34px;border-radius:50%;background:#e8f2ff;color:#1477f9;display:grid;place-items:center;font-weight:800}.strategy p{margin:5px 0 0;color:#70839a;font-size:13px}.subhead{margin-top:28px!important}.apply{float:right;margin-top:-42px}.result-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.result strong{display:block;font-size:34px;margin:18px 0 6px}.result em{display:block;font-style:normal;color:#18a365;font-size:19px;font-weight:800}.result strong small{font-size:15px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.chart{height:340px}.bars{height:245px;display:flex;align-items:end;justify-content:center;gap:90px;border-bottom:1px solid #cfd9e4;padding:0 25px}.bars>div{height:100%;width:90px;display:flex;flex-direction:column;justify-content:end;align-items:center;position:relative}.bars i{width:62px;background:#8ba0b8;border-radius:7px 7px 0 0;display:block}.bars>div:nth-child(2) i{background:#18b66a}.bars b{position:absolute;top:calc(100% - var(--h,50%));transform:translateY(-25px);font-size:13px}.bars span{font-size:12px;font-weight:700;color:#627790;margin-top:8px}.success{margin-top:18px;background:#e8faf0;border:1px solid #c7efd9;border-radius:12px;padding:18px 22px;color:#138c55;display:flex;gap:13px;font-size:27px;align-items:center}.success div{display:grid;gap:4px;font-size:16px}.success span{font-size:13px;color:#587766}.toast{position:fixed;right:25px;bottom:25px;background:#09284c;color:white;padding:13px 18px;border-radius:9px;box-shadow:0 10px 30px #0003;transform:translateY(100px);opacity:0;transition:.25s;z-index:10}.toast.show{transform:none;opacity:1}@media(max-width:1000px){.sidebar{width:220px}.main{margin-left:220px;width:calc(100% - 220px)}.cards,.result-cards{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.hero-art{display:none}.two-col,.analysis-grid,.charts{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr 1fr}}@media(max-width:700px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:none}.main{margin-left:0;width:100%}.page{padding:20px 15px}.hero{padding:32px 25px}.hero h1{font-size:37px}.cards,.result-cards,.form-grid{grid-template-columns:1fr}.apply{float:none;margin:20px 0 0}.topbar{padding:0 15px}.crumb{font-size:12px}.user{font-size:11px}.bars{gap:40px}.bars>div{width:65px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="anchor">⚓</span><span>AI Port<br><b>Optimizer</b></span></div>
+    <nav>
+      <button class="nav active" data-page="home">⌂ <span>Home</span></button>
+      <button class="nav" data-page="input">▣ <span>Input Data</span></button>
+      <button class="nav" data-page="details">▤ <span>Port Details</span></button>
+      <button class="nav" data-page="analysis">✦ <span>AI Analysis</span></button>
+      <button class="nav" data-page="optimization">◉ <span>Optimization</span></button>
+      <button class="nav" data-page="results">▥ <span>Results</span></button>
+    </nav>
+    <button class="logout" id="logout">↪ <span>Logout</span></button>
+    <div class="side-footer">Smarter Ports<br><b>Greener Future</b></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menuBtn" class="menu">☰</button>
+      <div class="crumb">Port Operations Intelligence</div>
+      <div class="user">● &nbsp; Welcome, User ▾</div>
+    </header>
+
+    <section id="home" class="page active">
+      <div class="hero">
+        <div>
+          <span class="eyebrow">SMARTER DECISIONS • FASTER OPERATIONS • HIGHER EFFICIENCY</span>
+          <h1>AI-Based Port<br>Optimization</h1>
+          <p>Use artificial intelligence to optimize port operations, reduce waiting time, minimize congestion and improve overall efficiency.</p>
+          <button class="primary" data-go="input">Get Started →</button>
+        </div>
+        <div class="hero-art">
+          <div class="ship">🚢</div>
+          <div class="crane">⚓</div>
+          <div class="water"></div>
+        </div>
+      </div>
+      <div class="section-head"><div><h2>Live Port Overview</h2><p>Current operating snapshot</p></div><span class="status-dot">● Operating Normally</span></div>
+      <div class="cards">
+        <div class="stat blue"><span>Total Ships</span><strong id="homeShips">10</strong><small>Ships in queue</small></div>
+        <div class="stat green"><span>Total Containers</span><strong id="homeContainers">15,000</strong><small>Across all ships</small></div>
+        <div class="stat orange"><span>Total Berths</span><strong>5</strong><small>Available at port</small></div>
+        <div class="stat purple"><span>Avg. Waiting Time</span><strong id="homeWait">5 hrs</strong><small>Current average</small></div>
+      </div>
+    </section>
+
+    <section id="input" class="page">
+      <div class="page-title"><h1>Input Data</h1><p>Enter the details of ships, containers and port conditions.</p></div>
+      <form id="inputForm" class="panel form-grid">
+        <div class="form-section full"><h2>Ship Information</h2></div>
+        <label>Number of Ships<input id="ships" type="number" min="1" value="10"></label>
+        <label>Avg. Ship Size (TEU)<input id="shipSize" type="number" min="100" value="1200"></label>
+        <label>Arrival Pattern<select id="arrival"><option>Random</option><option>Scheduled</option><option>Peak Hour</option></select></label>
+        <div class="form-section full"><h2>Container Information</h2></div>
+        <label>Total Containers<input id="containers" type="number" min="0" value="15000"></label>
+        <label>Container Type<select><option>Mixed</option><option>Standard</option><option>Reefer</option><option>Hazardous</option></select></label>
+        <div class="form-section full"><h2>Port Parameters</h2></div>
+        <label>Port Capacity (TEU/day)<input id="capacity" type="number" min="1000" value="20000"></label>
+        <label>Average Waiting Time (hrs)<input id="wait" type="number" min="0" value="5"></label>
+        <label>Congestion Level<select id="congestion"><option>Medium</option><option>Low</option><option>High</option></select></label>
+        <div class="full"><button class="primary wide" type="submit">✈ Submit Data</button></div>
+      </form>
+    </section>
+
+    <section id="details" class="page">
+      <div class="page-title"><h1>Port and Ship Information</h1><p>View detailed information about ships, containers, berths and port status.</p></div>
+      <div class="cards">
+        <div class="stat blue"><span>Total Ships</span><strong id="detailShips">10</strong><small>Ships in queue</small></div>
+        <div class="stat green"><span>Total Containers</span><strong id="detailContainers">15,000</strong><small>Across all ships</small></div>
+        <div class="stat orange"><span>Total Berths</span><strong>5</strong><small>Available at port</small></div>
+        <div class="stat purple"><span>Avg. Waiting Time</span><strong id="detailWait">5 hrs</strong><small>Current average</small></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><h2>Ships Information</h2><div class="table-wrap"><table id="shipsTable"><thead><tr><th>ID</th><th>Ship Name</th><th>Type</th><th>TEU</th><th>Arrival</th><th>Status</th><th>Action</th></tr></thead><tbody></tbody></table></div></div>
+        <div class="stack">
+          <div class="panel"><h2>Port Status</h2><div class="status-list"><div>Port Capacity <b>20,000 TEU/day</b></div><div>Current Load <b>75%</b></div><div>Congestion Level <em>Medium</em></div><div>Weather <strong>Clear</strong></div></div></div>
+          <div class="panel"><h2>Berth Details</h2><div class="table-wrap"><table><thead><tr><th>Berth</th><th>Type</th><th>Ship</th><th>Status</th></tr></thead><tbody id="berthTable"></tbody></table></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" class="page">
+      <div class="page-title"><h1>AI Analysis</h1><p>AI evaluates congestion, capacity and ship sequencing.</p></div>
+      <div class="analysis-grid">
+        <div class="panel score"><span>AI Congestion Risk</span><strong id="risk">Medium</strong><div class="meter"><i id="riskBar"></i></div><small>Based on current inputs</small></div>
+        <div class="panel"><h2>AI Findings</h2><ul class="check-list"><li>Waiting time can be reduced by optimizing berth sequence.</li><li>High-capacity vessels should use longer berths.</li><li>Arrival peaks should be distributed across time windows.</li><li>Container moves can be reduced through better yard planning.</li></ul></div>
+      </div>
+      <div class="panel recommendation"><h2>Recommended Strategy</h2><div class="strategy"><span>01</span><div><b>Reorder ship sequence</b><p>Prioritize ships with the highest operational impact.</p></div></div><div class="strategy"><span>02</span><div><b>Balance berth utilization</b><p>Spread vessels across compatible free berths.</p></div></div><div class="strategy"><span>03</span><div><b>Avoid peak congestion</b><p>Move flexible arrivals to lower-load time windows.</p></div></div></div>
+    </section>
+
+    <section id="optimization" class="page">
+      <div class="page-title"><h1>AI Proposed Solution</h1><p>Optimized berth allocation and handling plan generated by AI.</p></div>
+      <div class="panel"><h2>Optimal Berth Allocation</h2><div class="table-wrap"><table><thead><tr><th>Ship ID</th><th>Ship Name</th><th>Assigned Berth</th><th>Start Time</th><th>End Time</th></tr></thead><tbody id="optTable"></tbody></table></div>
+        <h2 class="subhead">AI Recommendations</h2>
+        <ul class="check-list"><li>Rearrange ship sequence to reduce waiting time.</li><li>Use B2 and B4 for high-capacity ships.</li><li>Optimize container handling with fewer crane moves.</li><li>Adjust arrival schedule to avoid peak congestion.</li></ul>
+        <button class="primary apply" id="applyPlan">✈ Apply Plan</button>
+      </div>
+    </section>
+
+    <section id="results" class="page">
+      <div class="page-title"><h1>Optimization Result</h1><p>Key performance metrics after applying the AI solution.</p></div>
+      <div class="result-cards">
+        <div class="result"><span>◷ Total Waiting Time</span><strong id="totalWaitResult">0 hrs</strong><em id="waitChange">↓ 0%</em><small id="waitBefore">from 0 hrs</small></div>
+        <div class="result"><span>▣ Port Throughput</span><strong id="throughputResult">0 <small>TEU/day</small></strong><em id="throughputChange">↑ 0%</em><small id="throughputBefore">from 0</small></div>
+        <div class="result"><span>♟ Congestion Level</span><strong id="congestionResult">Low</strong><em id="congestionChange">↓ 0%</em><small id="congestionBefore">from Medium</small></div>
+      </div>
+      <div class="charts">
+        <div class="panel chart"><h2>Waiting Time Comparison</h2><div class="bars"><div><i id="waitBeforeBar" style="height:94%"></i><b id="waitBeforeBarText">0 hrs</b><span>Before AI</span></div><div><i id="waitAfterBar" style="height:36%"></i><b id="waitAfterBarText">0 hrs</b><span>After AI</span></div></div></div>
+        <div class="panel chart"><h2>Container Throughput</h2><div class="bars throughput"><div><i id="throughputBeforeBar" style="height:68%"></i><b id="throughputBeforeBarText">0</b><span>Before AI</span></div><div><i id="throughputAfterBar" style="height:92%"></i><b id="throughputAfterBarText">0</b><span>After AI</span></div></div></div>
+      </div>
+      <div class="success">✓ <div><b>AI Optimization Successful!</b><span>The port operations are now faster, more efficient and cost-effective.</span></div></div>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const navs=[...document.querySelectorAll('.nav')];
+const toast=document.getElementById('toast');
+
+const baseShips=[
+ ['S1','Ocean Star','Container',1200,'08:00','Waiting'],
+ ['S2','Pacific Grace','Container',800,'10:30','At Berth'],
+ ['S3','Sea Voyager','Bulk',500,'12:15','Waiting'],
+ ['S4','Golden Wave','Container',2000,'14:00','Waiting'],
+ ['S5','Blue Horizon','Tanker',1000,'16:45','Scheduled'],
+ ['S6','Coral Spirit','Container',600,'18:20','Waiting'],
+ ['S7','Sunrise','Bulk',750,'20:10','Scheduled'],
+ ['S8','Ocean Breeze','Container',900,'22:30','Waiting'],
+ ['S9','Silver Moon','Tanker',1100,'23:50','At Berth'],
+ ['S10','Red Pearl','Container',700,'02:15','Scheduled']
+];
+let ships=[...baseShips];
+const berths=[['B1','Container','Pacific Grace','Occupied'],['B2','Container','—','Free'],['B3','Bulk','Sea Voyager','Occupied'],['B4','Container','—','Free'],['B5','Tanker','Blue Horizon','Free']];
+let optimization={rows:[],beforeWait:47,afterWait:18,beforeThroughput:13700,afterThroughput:18500,beforeLevel:'High',afterLevel:'Low'};
+
+function showPage(id){
+ pages.forEach(p=>p.classList.toggle('active',p.id===id));
+ navs.forEach(n=>n.classList.toggle('active',n.dataset.page===id));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+navs.forEach(n=>n.onclick=()=>showPage(n.dataset.page));
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>showPage(b.dataset.go));
+document.getElementById('menuBtn').onclick=()=>document.querySelector('.sidebar').classList.toggle('open');
+
+function toastMsg(msg){
+ toast.textContent=msg; toast.classList.add('show');
+ setTimeout(()=>toast.classList.remove('show'),2600);
+}
+function statusBadge(s){
+ const c=s==='Waiting'?'waiting':s==='Scheduled'?'scheduled':'berth';
+ return `<span class="badge ${c}">${s}</span>`;
+}
+function toMinutes(t){
+ const [h,m]=t.split(':').map(Number);
+ return h*60+m;
+}
+function timeText(min){
+ min=((Math.round(min)%1440)+1440)%1440;
+ return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0');
+}
+function congestionLevel(wait, capacity, containers){
+ const load=capacity>0?containers/capacity:1;
+ if(wait>=8 || load>=1 || document.getElementById('congestion').value==='High') return 'High';
+ if(wait>=4 || load>=0.7 || document.getElementById('congestion').value==='Medium') return 'Medium';
+ return 'Low';
+}
+function compatible(berthType, shipType){
+ return berthType===shipType || (berthType==='Container' && shipType==='Container');
+}
+function buildShips(n, defaultSize){
+ const out=[];
+ for(let i=0;i<n;i++){
+   if(i<baseShips.length) out.push([...baseShips[i]]);
+   else {
+     const types=['Container','Container','Bulk','Tanker'];
+     const type=types[i%types.length];
+     const hour=(8+(i*2)%18), minute=(i*15)%60;
+     out.push([`S${i+1}`,`Vessel ${i+1}`,type,Math.max(100,Math.round(defaultSize*(0.7+(i%4)*0.1))),timeText(hour*60+minute),'Scheduled']);
+   }
+ }
+ return out;
+}
+function optimize(data){
+ const freeByType={
+   Container:[['B1',0],['B2',0],['B4',0]],
+   Bulk:[['B3',0]],
+   Tanker:[['B5',0]]
+ };
+ const rows=[];
+ const sorted=[...data].sort((a,b)=>toMinutes(a[4])-toMinutes(b[4]));
+ sorted.forEach(s=>{
+   const type=s[2], arrival=toMinutes(s[4]);
+   let pool=freeByType[type] || freeByType.Container;
+   let best=pool[0];
+   pool.forEach(x=>{if(x[1]<best[1]) best=x;});
+   const start=Math.max(arrival,best[1]);
+   const duration=Math.max(90,Math.ceil(s[3]/400)*60);
+   const end=start+duration;
+   best[1]=end;
+   rows.push([s[0],s[1],best[0],timeText(start),timeText(end),Math.max(0,start-arrival)]);
+ });
+ const afterWait=Math.round(rows.reduce((a,r)=>a+r[5],0)/Math.max(1,rows.length));
+ return {rows,afterWait};
+}
+function updateResults(){
+ const before=Math.max(0,optimization.beforeWait);
+ const after=Math.max(0,optimization.afterWait);
+ const oldTP=Math.max(0,optimization.beforeThroughput);
+ const newTP=Math.max(0,optimization.afterThroughput);
+ const waitPct=before?Math.max(0,Math.round((before-after)/before*100)):0;
+ const tpPct=oldTP?Math.round((newTP-oldTP)/oldTP*100):0;
+ document.getElementById('totalWaitResult').textContent=after+' hrs';
+ document.getElementById('waitChange').textContent=`↓ ${waitPct}%`;
+ document.getElementById('waitBefore').textContent=`from ${before} hrs`;
+ document.getElementById('throughputResult').innerHTML=`${newTP.toLocaleString()} <small>TEU/day</small>`;
+ document.getElementById('throughputChange').textContent=`↑ ${Math.max(0,tpPct)}%`;
+ document.getElementById('throughputBefore').textContent=`from ${oldTP.toLocaleString()}`;
+ document.getElementById('congestionResult').textContent=optimization.afterLevel;
+ document.getElementById('congestionChange').textContent=optimization.beforeLevel!==optimization.afterLevel?'↓ improved':'→ unchanged';
+ document.getElementById('congestionBefore').textContent=`from ${optimization.beforeLevel}`;
+ document.getElementById('waitBeforeBarText').textContent=before+' hrs';
+ document.getElementById('waitAfterBarText').textContent=after+' hrs';
+ document.getElementById('waitBeforeBar').style.height=Math.max(8,Math.min(100,before?100:8))+'%';
+ document.getElementById('waitAfterBar').style.height=Math.max(8,Math.min(100,before?(after/before*100):8))+'%';
+ document.getElementById('throughputBeforeBarText').textContent=oldTP.toLocaleString();
+ document.getElementById('throughputAfterBarText').textContent=newTP.toLocaleString();
+ const maxTP=Math.max(oldTP,newTP,1);
+ document.getElementById('throughputBeforeBar').style.height=Math.max(8,oldTP/maxTP*100)+'%';
+ document.getElementById('throughputAfterBar').style.height=Math.max(8,newTP/maxTP*100)+'%';
+}
+function render(){
+ document.querySelector('#shipsTable tbody').innerHTML=ships.map(s=>`<tr>${s.slice(0,5).map(x=>`<td>${x}</td>`).join('')}<td>${statusBadge(s[5])}</td><td><button class="view" onclick="toastMsg('Viewing ${s[1]}')">View</button></td></tr>`).join('');
+ document.getElementById('berthTable').innerHTML=berths.map(b=>`<tr><td>${b[0]}</td><td>${b[1]}</td><td>${b[2]}</td><td>${b[3]}</td></tr>`).join('');
+ document.getElementById('optTable').innerHTML=optimization.rows.map(r=>`<tr>${r.slice(0,5).map(x=>`<td>${x}</td>`).join('')}</tr>`).join('');
+ updateResults();
+}
+function processInput(){
+ const n=Math.max(1,+document.getElementById('ships').value||1);
+ const c=Math.max(0,+document.getElementById('containers').value||0);
+ const w=Math.max(0,+document.getElementById('wait').value||0);
+ const capacity=Math.max(1000,+document.getElementById('capacity').value||1000);
+ const size=Math.max(100,+document.getElementById('shipSize').value||1200);
+ const level=document.getElementById('congestion').value;
+ ships=buildShips(n,size);
+ const opt=optimize(ships);
+ const beforeWait=Math.round(w*n);
+ const afterWait=Math.min(beforeWait,Math.max(0,opt.afterWait));
+ const beforeTP=Math.min(capacity,Math.round(c/24*0.9));
+ const handlingGain=level==='High'?1.15:level==='Medium'?1.08:1.03;
+ const afterTP=Math.min(capacity,Math.max(beforeTP,Math.round(beforeTP*handlingGain)));
+ optimization={
+   rows:opt.rows,beforeWait,afterWait,beforeThroughput:beforeTP,afterThroughput:afterTP,
+   beforeLevel:level,afterLevel:congestionLevel(afterWait,capacity,c)
+ };
+ document.getElementById('homeShips').textContent=n;
+ document.getElementById('detailShips').textContent=n;
+ document.getElementById('homeContainers').textContent=c.toLocaleString();
+ document.getElementById('detailContainers').textContent=c.toLocaleString();
+ document.getElementById('homeWait').textContent=w+' hrs';
+ document.getElementById('detailWait').textContent=w+' hrs';
+ document.getElementById('risk').textContent=level;
+ document.getElementById('riskBar').style.width=level==='High'?'88%':level==='Medium'?'62%':'30%';
+ render();
+ toastMsg('Input data submitted successfully ✓');
+ showPage('analysis');
+}
+document.getElementById('inputForm').onsubmit=e=>{e.preventDefault();processInput();};
+document.getElementById('applyPlan').onclick=()=>{
+ render();
+ toastMsg('AI optimization plan applied ✓');
+ showPage('results');
+};
+document.getElementById('logout').onclick=()=>toastMsg('Demo logout action');
+optimization=optimize(ships);
+optimization.beforeWait=47; optimization.afterWait=18;
+optimization.beforeThroughput=13700; optimization.afterThroughput=18500;
+optimization.beforeLevel='High'; optimization.afterLevel='Low';
+render();
+</script>
+</body>
+</html>
