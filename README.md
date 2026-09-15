@@ -100,7 +100,7 @@ streamlit run app.py
 
 | Artifact | Link |
 |---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
+| 📹 Demo Video | https://drive.google.com/drive/folders/19lHYghabk_lk42D98y_LlSjrJdRytVOV?usp=sharing |
 | 🌐 Live Demo | https://drive.google.com/drive/folders/1-YNd3cHcaJR4aOLSUaAS6kMgICCY7Mlu?usp=sharing |
 | 🖼️ Screenshots | https://drive.google.com/drive/folders/1DLjfMHdzfaJngH-0tiZcnqpu457Wj06L?usp=sharing |
 | 📊 Presentation | https://drive.google.com/drive/folders/1bl4D2mQmpfKUl3Fiy4ykWl1iGlyDFemS?usp=sharing |
